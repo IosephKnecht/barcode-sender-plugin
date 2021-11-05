@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="40"
+   viewBox="0 0 5 5"
+   width="40"
+   version="1.1"
+   id="svg159"
+   sodipodi:docname="bar-code-sender-logo-light.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs163">
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#New_Gradient_Swatch_3"
+       id="linearGradient245"
+       gradientUnits="userSpaceOnUse"
+       x1="32"
+       y1="63.514"
+       x2="32"
+       y2="2.5439999" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#New_Gradient_Swatch_3"
+       id="linearGradient247"
+       gradientUnits="userSpaceOnUse"
+       x1="32"
+       y1="63.514"
+       x2="32"
+       y2="2.5439999" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#New_Gradient_Swatch_3"
+       id="linearGradient249"
+       gradientUnits="userSpaceOnUse"
+       x1="32"
+       y1="63.514"
+       x2="32"
+       y2="2.5439999" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#New_Gradient_Swatch_3"
+       id="linearGradient251"
+       gradientUnits="userSpaceOnUse"
+       x1="32"
+       y1="63.514"
+       x2="32"
+       y2="2.5439999" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#New_Gradient_Swatch_3"
+       id="linearGradient253"
+       gradientUnits="userSpaceOnUse"
+       x1="32"
+       y1="63.514"
+       x2="32"
+       y2="2.5439999" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#New_Gradient_Swatch_3"
+       id="linearGradient255"
+       gradientUnits="userSpaceOnUse"
+       x1="32"
+       y1="63.514"
+       x2="32"
+       y2="2.5439999" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#New_Gradient_Swatch_3"
+       id="linearGradient257"
+       x1="36"
+       y1="63.514"
+       x2="36"
+       y2="2.5439999" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#New_Gradient_Swatch_3"
+       id="linearGradient259"
+       x1="39"
+       y1="63.514"
+       x2="39"
+       y2="2.5439999" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#New_Gradient_Swatch_3"
+       id="linearGradient261"
+       x1="42"
+       y1="63.514"
+       x2="42"
+       y2="2.5439999" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#New_Gradient_Swatch_3"
+       id="linearGradient263"
+       x1="48"
+       y1="63.514"
+       x2="48"
+       y2="2.5439999" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#New_Gradient_Swatch_3"
+       id="linearGradient265"
+       x1="51"
+       y1="63.514"
+       x2="51"
+       y2="2.5439999" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#New_Gradient_Swatch_3"
+       id="linearGradient267"
+       x1="28"
+       y1="63.514"
+       x2="28"
+       y2="2.5439999" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#New_Gradient_Swatch_3"
+       id="linearGradient269"
+       x1="24"
+       y1="63.514"
+       x2="24"
+       y2="2.5439999" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#New_Gradient_Swatch_3"
+       id="linearGradient271"
+       x1="21"
+       y1="63.514"
+       x2="21"
+       y2="2.5439999" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#New_Gradient_Swatch_3"
+       id="linearGradient273"
+       x1="17"
+       y1="63.514"
+       x2="17"
+       y2="2.5439999" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview161"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     width="40px"
+     inkscape:zoom="1.5292969"
+     inkscape:cx="401.81865"
+     inkscape:cy="256"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg159" />
+  <linearGradient
+     id="New_Gradient_Swatch_3"
+     gradientUnits="userSpaceOnUse"
+     x1="32"
+     x2="32"
+     y1="63.514"
+     y2="2.5439999">
+    <stop
+       offset="0"
+       stop-color="#006df0"
+       id="stop87" />
+    <stop
+       offset="1"
+       stop-color="#00e7f0"
+       id="stop89" />
+  </linearGradient>
+  <linearGradient
+     id="New_Gradient_Swatch_3-6"
+     x1="36"
+     x2="36"
+     xlink:href="#New_Gradient_Swatch_3"
+     y1="63.514"
+     y2="2.5439999" />
+  <linearGradient
+     id="New_Gradient_Swatch_3-8"
+     x1="39"
+     x2="39"
+     xlink:href="#New_Gradient_Swatch_3"
+     y1="63.514"
+     y2="2.5439999" />
+  <linearGradient
+     id="New_Gradient_Swatch_3-10"
+     x1="42"
+     x2="42"
+     xlink:href="#New_Gradient_Swatch_3"
+     y1="63.514"
+     y2="2.5439999" />
+  <linearGradient
+     id="New_Gradient_Swatch_3-12"
+     x1="48"
+     x2="48"
+     xlink:href="#New_Gradient_Swatch_3"
+     y1="63.514"
+     y2="2.5439999" />
+  <linearGradient
+     id="New_Gradient_Swatch_3-14"
+     x1="51"
+     x2="51"
+     xlink:href="#New_Gradient_Swatch_3"
+     y1="63.514"
+     y2="2.5439999" />
+  <linearGradient
+     id="New_Gradient_Swatch_3-16"
+     x1="55"
+     x2="55"
+     xlink:href="#New_Gradient_Swatch_3"
+     y1="63.514"
+     y2="2.5439999" />
+  <linearGradient
+     id="New_Gradient_Swatch_3-17"
+     x1="28"
+     x2="28"
+     xlink:href="#New_Gradient_Swatch_3"
+     y1="63.514"
+     y2="2.5439999" />
+  <linearGradient
+     id="New_Gradient_Swatch_3-19"
+     x1="24"
+     x2="24"
+     xlink:href="#New_Gradient_Swatch_3"
+     y1="63.514"
+     y2="2.5439999" />
+  <linearGradient
+     id="New_Gradient_Swatch_3-21"
+     x1="21"
+     x2="21"
+     xlink:href="#New_Gradient_Swatch_3"
+     y1="63.514"
+     y2="2.5439999" />
+  <linearGradient
+     id="New_Gradient_Swatch_3-23"
+     x1="17"
+     x2="17"
+     xlink:href="#New_Gradient_Swatch_3"
+     y1="63.514"
+     y2="2.5439999" />
+  <linearGradient
+     id="New_Gradient_Swatch_3-25"
+     x1="13"
+     x2="13"
+     xlink:href="#New_Gradient_Swatch_3"
+     y1="63.514"
+     y2="2.5439999" />
+  <linearGradient
+     id="New_Gradient_Swatch_3-26"
+     x1="9"
+     x2="9"
+     xlink:href="#New_Gradient_Swatch_3"
+     y1="63.514"
+     y2="2.5439999" />
+  <g
+     id="barcode-online-mobilephone-shopping-scan"
+     transform="matrix(0.075,0,0,0.075,0.1,0.1)">
+    <g
+       fill="url(#New_Gradient_Swatch_3)"
+       id="g114"
+       style="fill:url(#linearGradient255)">
+      <path
+         d="m 30,7 h 4 a 1,1 0 0 0 0,-2 h -4 a 1,1 0 0 0 0,2 z"
+         id="path104"
+         style="fill:url(#linearGradient245)" />
+      <path
+         d="m 34,57 h -4 a 1,1 0 0 0 0,2 h 4 a 1,1 0 0 0 0,-2 z"
+         id="path106"
+         style="fill:url(#linearGradient247)" />
+      <path
+         d="M 59,17 H 51 V 7 A 5,5 0 0 0 46,2 H 18 A 5,5 0 0 0 13,7 V 17 H 5 a 3.009,3.009 0 0 0 -3,3 v 24 a 3.009,3.009 0 0 0 3,3 h 8 v 10 a 5,5 0 0 0 5,5 h 28 a 5,5 0 0 0 5,-5 V 47 h 8 a 3.009,3.009 0 0 0 3,-3 V 20 A 3.009,3.009 0 0 0 59,17 Z M 15,7 a 3.009,3.009 0 0 1 3,-3 h 28 a 3.009,3.009 0 0 1 3,3 V 8 H 15 Z m 0,3 h 34 v 7 H 15 Z m 34,47 a 3.009,3.009 0 0 1 -3,3 H 18 a 3.009,3.009 0 0 1 -3,-3 v -1 h 34 z m 0,-3 H 15 V 47 H 49 Z M 60,44 a 1,1 0 0 1 -1,1 H 5 A 1,1 0 0 1 4,44 V 20 a 1,1 0 0 1 1,-1 h 54 a 1,1 0 0 1 1,1 z"
+         id="path108"
+         style="fill:url(#linearGradient249)" />
+      <path
+         d="m 32,22 a 1,1 0 0 0 -1,1 v 14 a 1,1 0 0 0 2,0 V 23 a 1,1 0 0 0 -1,-1 z"
+         id="path110"
+         style="fill:url(#linearGradient251)" />
+      <path
+         d="m 32,39 a 1,1 0 0 0 -1,1 v 1 a 1,1 0 0 0 2,0 v -1 a 1,1 0 0 0 -1,-1 z"
+         id="path112"
+         style="fill:url(#linearGradient253)" />
+    </g>
+    <path
+       d="m 36,22 a 1,1 0 0 0 -1,1 v 14 a 1,1 0 0 0 2,0 V 23 a 1,1 0 0 0 -1,-1 z"
+       fill="url(#New_Gradient_Swatch_3-6)"
+       id="path116"
+       style="fill:url(#linearGradient257)" />
+    <path
+       d="m 36,39 a 1,1 0 0 0 -1,1 v 1 a 1,1 0 0 0 2,0 v -1 a 1,1 0 0 0 -1,-1 z"
+       fill="url(#New_Gradient_Swatch_3-6)"
+       id="path118"
+       style="fill:url(#New_Gradient_Swatch_3-6)" />
+    <path
+       d="m 39,22 a 1,1 0 0 0 -1,1 v 14 a 1,1 0 0 0 2,0 V 23 a 1,1 0 0 0 -1,-1 z"
+       fill="url(#New_Gradient_Swatch_3-8)"
+       id="path120"
+       style="fill:url(#linearGradient259)" />
+    <path
+       d="m 39,39 a 1,1 0 0 0 -1,1 v 1 a 1,1 0 0 0 2,0 v -1 a 1,1 0 0 0 -1,-1 z"
+       fill="url(#New_Gradient_Swatch_3-8)"
+       id="path122"
+       style="fill:url(#New_Gradient_Swatch_3-8)" />
+    <path
+       d="m 42,22 a 1,1 0 0 0 -1,1 v 14 a 1,1 0 0 0 2,0 V 23 a 1,1 0 0 0 -1,-1 z"
+       fill="url(#New_Gradient_Swatch_3-10)"
+       id="path124"
+       style="fill:url(#linearGradient261)" />
+    <path
+       d="m 42,39 a 1,1 0 0 0 -1,1 v 1 a 1,1 0 0 0 2,0 v -1 a 1,1 0 0 0 -1,-1 z"
+       fill="url(#New_Gradient_Swatch_3-10)"
+       id="path126"
+       style="fill:url(#New_Gradient_Swatch_3-10)" />
+    <path
+       d="m 48,22 a 1,1 0 0 0 -1,1 v 14 a 1,1 0 0 0 2,0 V 23 a 1,1 0 0 0 -1,-1 z"
+       fill="url(#New_Gradient_Swatch_3-12)"
+       id="path128"
+       style="fill:url(#linearGradient263)" />
+    <path
+       d="m 48,39 a 1,1 0 0 0 -1,1 v 1 a 1,1 0 0 0 2,0 v -1 a 1,1 0 0 0 -1,-1 z"
+       fill="url(#New_Gradient_Swatch_3-12)"
+       id="path130"
+       style="fill:url(#New_Gradient_Swatch_3-12)" />
+    <path
+       d="m 51,22 a 1,1 0 0 0 -1,1 v 14 a 1,1 0 0 0 2,0 V 23 a 1,1 0 0 0 -1,-1 z"
+       fill="url(#New_Gradient_Swatch_3-14)"
+       id="path132"
+       style="fill:url(#linearGradient265)" />
+    <path
+       d="m 51,39 a 1,1 0 0 0 -1,1 v 1 a 1,1 0 0 0 2,0 v -1 a 1,1 0 0 0 -1,-1 z"
+       fill="url(#New_Gradient_Swatch_3-14)"
+       id="path134"
+       style="fill:url(#New_Gradient_Swatch_3-14)" />
+    <path
+       d="m 55,22 a 1,1 0 0 0 -1,1 v 18 a 1,1 0 0 0 2,0 V 23 a 1,1 0 0 0 -1,-1 z"
+       fill="url(#New_Gradient_Swatch_3-16)"
+       id="path136"
+       style="fill:url(#New_Gradient_Swatch_3-16)" />
+    <path
+       d="m 28,22 a 1,1 0 0 0 -1,1 v 14 a 1,1 0 0 0 2,0 V 23 a 1,1 0 0 0 -1,-1 z"
+       fill="url(#New_Gradient_Swatch_3-17)"
+       id="path138"
+       style="fill:url(#linearGradient267)" />
+    <path
+       d="m 28,39 a 1,1 0 0 0 -1,1 v 1 a 1,1 0 0 0 2,0 v -1 a 1,1 0 0 0 -1,-1 z"
+       fill="url(#New_Gradient_Swatch_3-17)"
+       id="path140"
+       style="fill:url(#New_Gradient_Swatch_3-17)" />
+    <path
+       d="m 24,22 a 1,1 0 0 0 -1,1 v 14 a 1,1 0 0 0 2,0 V 23 a 1,1 0 0 0 -1,-1 z"
+       fill="url(#New_Gradient_Swatch_3-19)"
+       id="path142"
+       style="fill:url(#linearGradient269)" />
+    <path
+       d="m 24,39 a 1,1 0 0 0 -1,1 v 1 a 1,1 0 0 0 2,0 v -1 a 1,1 0 0 0 -1,-1 z"
+       fill="url(#New_Gradient_Swatch_3-19)"
+       id="path144"
+       style="fill:url(#New_Gradient_Swatch_3-19)" />
+    <path
+       d="m 21,22 a 1,1 0 0 0 -1,1 v 14 a 1,1 0 0 0 2,0 V 23 a 1,1 0 0 0 -1,-1 z"
+       fill="url(#New_Gradient_Swatch_3-21)"
+       id="path146"
+       style="fill:url(#linearGradient271)" />
+    <path
+       d="m 21,39 a 1,1 0 0 0 -1,1 v 1 a 1,1 0 0 0 2,0 v -1 a 1,1 0 0 0 -1,-1 z"
+       fill="url(#New_Gradient_Swatch_3-21)"
+       id="path148"
+       style="fill:url(#New_Gradient_Swatch_3-21)" />
+    <path
+       d="m 17,22 a 1,1 0 0 0 -1,1 v 14 a 1,1 0 0 0 2,0 V 23 a 1,1 0 0 0 -1,-1 z"
+       fill="url(#New_Gradient_Swatch_3-23)"
+       id="path150"
+       style="fill:url(#linearGradient273)" />
+    <path
+       d="m 17,39 a 1,1 0 0 0 -1,1 v 1 a 1,1 0 0 0 2,0 v -1 a 1,1 0 0 0 -1,-1 z"
+       fill="url(#New_Gradient_Swatch_3-23)"
+       id="path152"
+       style="fill:url(#New_Gradient_Swatch_3-23)" />
+    <path
+       d="m 13,22 a 1,1 0 0 0 -1,1 v 18 a 1,1 0 0 0 2,0 V 23 a 1,1 0 0 0 -1,-1 z"
+       fill="url(#New_Gradient_Swatch_3-25)"
+       id="path154"
+       style="fill:url(#New_Gradient_Swatch_3-25)" />
+    <path
+       d="m 9,22 a 1,1 0 0 0 -1,1 v 18 a 1,1 0 0 0 2,0 V 23 A 1,1 0 0 0 9,22 Z"
+       fill="url(#New_Gradient_Swatch_3-26)"
+       id="path156"
+       style="fill:url(#New_Gradient_Swatch_3-26)" />
+  </g>
+</svg>

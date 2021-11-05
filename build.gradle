@@ -1,0 +1,70 @@
+plugins {
+    id 'org.jetbrains.intellij' version '1.1.4'
+    id 'org.jetbrains.kotlin.jvm' version '1.5.31'
+    id 'org.jetbrains.kotlin.kapt' version '1.5.31'
+    id 'java'
+}
+
+group 'com.project.iosephknecht'
+version 'v1.0.0-alpha01'
+
+def idePathKey = 'ANDROID_STUDIO_PATH'
+def platformPrefix = 'AndroidStudio'
+def localProperties = new Properties()
+
+localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+
+repositories {
+    mavenCentral()
+    google()
+}
+
+ext {
+    kotlin_version = '1.5.31'
+    rx_java_version = '3.1.2'
+    rx_swing_version = '3.1.1'
+    dagger_version = '2.39.1'
+    junit_version = '5.8.1'
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "io.reactivex.rxjava3:rxjava:$rx_java_version"
+    implementation "com.github.akarnokd:rxjava3-swing:$rx_swing_version"
+
+    implementation "com.google.dagger:dagger:$dagger_version"
+
+    runtimeOnly "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junit_version"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junit_version"
+
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version = '203.7717.56'
+    type = 'IC'
+    plugins = ['android']
+}
+buildSearchableOptions {
+    enabled = false
+}
+patchPluginXml {
+    changeNotes = """
+      - Fixed bug with no display multiple choice. <br>
+      - Fixed bug with wrong determinate uninitialized and failure initialize. <br>
+      - Fixed bug with not reset selected device after choice another device. <br>
+      - Added icons for selector. <br>
+      - Added plugin logo. <br>"""
+}
+runIde {
+    if (localProperties.containsKey(idePathKey)) {
+        systemProperty('idea.platform.prefix', platformPrefix)
+        ideDir = file(localProperties.getProperty(idePathKey))
+    }
+}
+test {
+    useJUnitPlatform()
+}

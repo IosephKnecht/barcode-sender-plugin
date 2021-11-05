@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="40"
+   viewBox="0 0 5 5"
+   width="40"
+   version="1.1"
+   id="svg145"
+   sodipodi:docname="bar-code-sender-logo.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs149" />
+  <sodipodi:namedview
+     id="namedview147"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="1.5292969"
+     inkscape:cx="401.81865"
+     inkscape:cy="129.14432"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg145" />
+  <g
+     id="barcode-online-mobilephone-shopping-scan"
+     transform="matrix(0.07758621,0,0,0.07758621,0.06992339,0.06992339)">
+    <path
+       d="M 14,9 H 50 V 55 H 14 Z"
+       fill="#ffc477"
+       id="path80" />
+    <path
+       d="M 14,55 H 50 V 19 A 36,36 0 0 1 14,55 Z"
+       fill="#ffb655"
+       id="path82" />
+    <path
+       d="M 46,3 H 18 A 4,4 0 0 0 14,7 V 9 H 50 V 7 A 4,4 0 0 0 46,3 Z"
+       fill="#006df0"
+       id="path84" />
+    <path
+       d="m 14,57 a 4,4 0 0 0 4,4 h 28 a 4,4 0 0 0 4,-4 V 55 H 14 Z"
+       fill="#006df0"
+       id="path86" />
+    <rect
+       fill="#ffcd00"
+       height="28"
+       rx="2"
+       width="58"
+       x="3"
+       y="18"
+       id="rect88" />
+    <path
+       d="m 35,46 h 24 a 2,2 0 0 0 2,-2 V 20 A 26,26 0 0 1 35,46 Z"
+       fill="#ebbf00"
+       id="path90" />
+    <path
+       d="m 30,7 h 4 a 1,1 0 0 0 0,-2 h -4 a 1,1 0 0 0 0,2 z"
+       fill="#004fac"
+       id="path92" />
+    <path
+       d="m 34,57 h -4 a 1,1 0 0 0 0,2 h 4 a 1,1 0 0 0 0,-2 z"
+       fill="#004fac"
+       id="path94" />
+    <g
+       fill="#414042"
+       id="g142">
+      <path
+         d="m 32,22 a 1,1 0 0 0 -1,1 v 14 a 1,1 0 0 0 2,0 V 23 a 1,1 0 0 0 -1,-1 z"
+         id="path96" />
+      <path
+         d="m 32,39 a 1,1 0 0 0 -1,1 v 1 a 1,1 0 0 0 2,0 v -1 a 1,1 0 0 0 -1,-1 z"
+         id="path98" />
+      <path
+         d="m 36,22 a 1,1 0 0 0 -1,1 v 14 a 1,1 0 0 0 2,0 V 23 a 1,1 0 0 0 -1,-1 z"
+         id="path100" />
+      <path
+         d="m 36,39 a 1,1 0 0 0 -1,1 v 1 a 1,1 0 0 0 2,0 v -1 a 1,1 0 0 0 -1,-1 z"
+         id="path102" />
+      <path
+         d="m 39,22 a 1,1 0 0 0 -1,1 v 14 a 1,1 0 0 0 2,0 V 23 a 1,1 0 0 0 -1,-1 z"
+         id="path104" />
+      <path
+         d="m 39,39 a 1,1 0 0 0 -1,1 v 1 a 1,1 0 0 0 2,0 v -1 a 1,1 0 0 0 -1,-1 z"
+         id="path106" />
+      <path
+         d="m 42,22 a 1,1 0 0 0 -1,1 v 14 a 1,1 0 0 0 2,0 V 23 a 1,1 0 0 0 -1,-1 z"
+         id="path108" />
+      <path
+         d="m 42,39 a 1,1 0 0 0 -1,1 v 1 a 1,1 0 0 0 2,0 v -1 a 1,1 0 0 0 -1,-1 z"
+         id="path110" />
+      <path
+         d="m 48,22 a 1,1 0 0 0 -1,1 v 14 a 1,1 0 0 0 2,0 V 23 a 1,1 0 0 0 -1,-1 z"
+         id="path112" />
+      <path
+         d="m 48,39 a 1,1 0 0 0 -1,1 v 1 a 1,1 0 0 0 2,0 v -1 a 1,1 0 0 0 -1,-1 z"
+         id="path114" />
+      <path
+         d="m 51,22 a 1,1 0 0 0 -1,1 v 14 a 1,1 0 0 0 2,0 V 23 a 1,1 0 0 0 -1,-1 z"
+         id="path116" />
+      <path
+         d="m 51,39 a 1,1 0 0 0 -1,1 v 1 a 1,1 0 0 0 2,0 v -1 a 1,1 0 0 0 -1,-1 z"
+         id="path118" />
+      <path
+         d="m 55,22 a 1,1 0 0 0 -1,1 v 18 a 1,1 0 0 0 2,0 V 23 a 1,1 0 0 0 -1,-1 z"
+         id="path120" />
+      <path
+         d="m 28,22 a 1,1 0 0 0 -1,1 v 14 a 1,1 0 0 0 2,0 V 23 a 1,1 0 0 0 -1,-1 z"
+         id="path122" />
+      <path
+         d="m 28,39 a 1,1 0 0 0 -1,1 v 1 a 1,1 0 0 0 2,0 v -1 a 1,1 0 0 0 -1,-1 z"
+         id="path124" />
+      <path
+         d="m 24,22 a 1,1 0 0 0 -1,1 v 14 a 1,1 0 0 0 2,0 V 23 a 1,1 0 0 0 -1,-1 z"
+         id="path126" />
+      <path
+         d="m 24,39 a 1,1 0 0 0 -1,1 v 1 a 1,1 0 0 0 2,0 v -1 a 1,1 0 0 0 -1,-1 z"
+         id="path128" />
+      <path
+         d="m 21,22 a 1,1 0 0 0 -1,1 v 14 a 1,1 0 0 0 2,0 V 23 a 1,1 0 0 0 -1,-1 z"
+         id="path130" />
+      <path
+         d="m 21,39 a 1,1 0 0 0 -1,1 v 1 a 1,1 0 0 0 2,0 v -1 a 1,1 0 0 0 -1,-1 z"
+         id="path132" />
+      <path
+         d="m 17,22 a 1,1 0 0 0 -1,1 v 14 a 1,1 0 0 0 2,0 V 23 a 1,1 0 0 0 -1,-1 z"
+         id="path134" />
+      <path
+         d="m 17,39 a 1,1 0 0 0 -1,1 v 1 a 1,1 0 0 0 2,0 v -1 a 1,1 0 0 0 -1,-1 z"
+         id="path136" />
+      <path
+         d="m 13,22 a 1,1 0 0 0 -1,1 v 18 a 1,1 0 0 0 2,0 V 23 a 1,1 0 0 0 -1,-1 z"
+         id="path138" />
+      <path
+         d="m 9,22 a 1,1 0 0 0 -1,1 v 18 a 1,1 0 0 0 2,0 V 23 A 1,1 0 0 0 9,22 Z"
+         id="path140" />
+    </g>
+  </g>
+</svg>

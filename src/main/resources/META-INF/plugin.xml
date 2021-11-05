@@ -1,0 +1,45 @@
+<idea-plugin>
+    <id>com.project.iosephknecht.barcode_sender_plugin</id>
+    <name>BarcodeSender</name>
+    <vendor email="dadyafedar@gmail.com"></vendor>
+
+    <description><![CDATA[Plugin for quickly sending barcodes to devices via IDE.]]></description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.android</depends>
+
+    <applicationListeners>
+        <listener class="com.project.iosephknecht.barcode_sender_plugin.presentation.app.Application"
+                  topic="com.intellij.ide.AppLifecycleListener"/>
+    </applicationListeners>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <notificationGroup id="Barcode Sender Notification Group" displayType="BALLOON" key="notification.group.name"/>
+        <applicationService serviceImplementation="com.project.iosephknecht.barcode_sender_plugin.domain.DefaultLocalStorage"
+                            serviceInterface="com.project.iosephknecht.barcode_sender_plugin.domain.LocalStorage"/>
+        <applicationService serviceImplementation="com.project.iosephknecht.barcode_sender_plugin.domain.DefaultSettingsStorage"
+                            serviceInterface="com.project.iosephknecht.barcode_sender_plugin.domain.SettingsStorage"/>
+        <applicationConfigurable parentId="tools"
+                                 instance="com.project.iosephknecht.barcode_sender_plugin.presentation.settings.SettingsDialog"
+                                 id="com.project.iosephknecht.barcode_sender_plugin.presentation.settings.SettingsDialog"
+                                 displayName="Barcode Sender Settings Plugin"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <group id="BarcodeSender.TopMenu"
+               text="BarcodeSender"
+               description="BarcodeSender toolbar menu">
+
+            <action id="com.project.iosephknecht.barcode_sender_plugin.presentation.actions.BarcodeSenderAction"
+                    class="com.project.iosephknecht.barcode_sender_plugin.presentation.actions.BarcodeSenderAction"
+                    text="BarcodeSenderAction">
+                <keyboard-shortcut first-keystroke="control alt R" keymap="$default"/>
+            </action>
+
+        </group>
+    </actions>
+</idea-plugin>

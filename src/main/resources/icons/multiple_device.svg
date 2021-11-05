@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 2 2"
+   width="16"
+   height="16"
+   version="1.1"
+   id="svg151"
+   sodipodi:docname="multiple_device.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs155" />
+  <sodipodi:namedview
+     id="namedview153"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="6.6805162"
+     inkscape:cx="40.266349"
+     inkscape:cy="-28.964828"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg151" />
+  <title
+     id="title108">a</title>
+  <g
+     id="_06_Two_Displays"
+     data-name="06 Two Displays"
+     transform="matrix(0.03125,0,0,0.03123773,0,3.9269503e-4)">
+    <path
+       d="m 61.418,10.092 -13.032,-6 A 0.991,0.991 0 0 0 47.968,4 2.739,2.739 0 0 0 45,6.642 V 14 h -8 a 3,3 0 0 0 -3,3 v 40.011 a 3,3 0 0 0 3,3 h 24 a 3,3 0 0 0 3,-3 V 13 c 0,-1.721 -1.454,-2.39 -2.582,-2.908 z M 47,6.642 c 0,-0.464 0.5,-0.593 0.778,-0.628 l 12.87,5.925 C 61.663,12.406 62,12.624 62,13 a 1,1 0 0 1 -1,1 H 47 Z M 36,26 h 4 v 4 h -4 z m 4,10 h -4 v -4 h 4 z m -4,2 h 4 v 4 h -4 z m 1,-22 h 3 v 8 h -4 v -7 a 1,1 0 0 1 1,-1 z M 36,57.011 V 44 h 4 v 14.011 h -3 a 1,1 0 0 1 -1,-1 z m 26,0 a 1,1 0 0 1 -1,1 H 42 V 16 h 19 a 2.986,2.986 0 0 0 0.563,-0.057 c 0.06,-0.011 0.116,-0.031 0.174,-0.045 0.088,-0.023 0.179,-0.04 0.263,-0.069 z"
+       id="path110" />
+    <path
+       d="M 37.29,27.29 A 1.01,1.01 0 0 0 37,28 a 0.99,0.99 0 0 0 1,1 1.007,1.007 0 0 0 1,-1 1.033,1.033 0 0 0 -0.29,-0.71 1.047,1.047 0 0 0 -1.42,0 z"
+       id="path112" />
+    <path
+       d="M 37.29,34.71 A 1.05,1.05 0 0 0 38,35 1.019,1.019 0 0 0 38.71,34.7 0.971,0.971 0 0 0 39,34 1.033,1.033 0 0 0 38.71,33.29 1.047,1.047 0 0 0 37.29,33.29 1.028,1.028 0 0 0 37,34 a 1.047,1.047 0 0 0 0.29,0.71 z"
+       id="path114" />
+    <path
+       d="m 38.71,39.29 a 1.047,1.047 0 0 0 -1.42,0 A 1.01,1.01 0 0 0 37,40 a 0.99,0.99 0 0 0 1,1 1.007,1.007 0 0 0 1,-1 1.033,1.033 0 0 0 -0.29,-0.71 z"
+       id="path116" />
+    <path
+       d="m 38,22 a 1,1 0 0 0 1,-1 v -2 a 1,1 0 0 0 -2,0 v 2 a 1,1 0 0 0 1,1 z"
+       id="path118" />
+    <path
+       d="m 51.5,26 a 2.5,2.5 0 0 0 -2.5,2.5 1,1 0 0 0 2,0 0.5,0.5 0 0 1 0.99,-0.1 c -0.261,0.645 -1.639,3.072 -2.847,5.084 A 1,1 0 0 0 50,35 h 3 a 1,1 0 0 0 0,-2 H 51.757 C 54,29.175 54,28.76 54,28.5 A 2.5,2.5 0 0 0 51.5,26 Z"
+       id="path120" />
+    <path
+       d="M 27,3.989 H 3 a 3,3 0 0 0 -3,3 V 51 c 0,1.721 1.454,2.39 2.582,2.908 l 13.032,6 A 0.991,0.991 0 0 0 16.032,60 2.739,2.739 0 0 0 19,57.358 V 50 h 8 a 3,3 0 0 0 3,-3 V 6.989 a 3,3 0 0 0 -3,-3 z M 17,57.358 c 0,0.464 -0.5,0.593 -0.778,0.628 L 3.352,52.061 C 2.337,51.594 2,51.376 2,51 A 1,1 0 0 1 3,50 H 17 Z M 28,47 a 1,1 0 0 1 -1,1 H 3 A 3,3 0 0 0 2.436,48.057 C 2.377,48.068 2.321,48.088 2.263,48.102 2.175,48.125 2.084,48.142 2,48.171 V 6.989 a 1,1 0 0 1 1,-1 h 24 a 1,1 0 0 1 1,1 z"
+       id="path122" />
+    <path
+       d="m 15,18 v 5 a 1,1 0 0 0 2,0 v -6 a 1,1 0 0 0 -1,-1 h -1 a 1,1 0 0 0 0,2 z"
+       id="path124" />
+    <path
+       d="M 9,40 H 7 a 2,2 0 0 0 -2,2 v 2 a 2,2 0 0 0 2,2 h 2 a 2,2 0 0 0 2,-2 V 42 A 2,2 0 0 0 9,40 Z m 0,4 H 7 v -2 h 2 z"
+       id="path126" />
+    <path
+       d="m 16,40 h -2 a 2,2 0 0 0 -2,2 v 2 a 2,2 0 0 0 2,2 h 2 a 2,2 0 0 0 2,-2 v -2 a 2,2 0 0 0 -2,-2 z m 0,4 h -2 v -2 h 2 z"
+       id="path128" />
+    <path
+       d="m 23,40 h -2 a 2,2 0 0 0 -2,2 v 2 a 2,2 0 0 0 2,2 h 2 a 2,2 0 0 0 2,-2 v -2 a 2,2 0 0 0 -2,-2 z m 0,4 h -2 v -2 h 2 z"
+       id="path130" />
+    <path
+       d="M 9,33 H 7 a 2,2 0 0 0 -2,2 v 2 a 2,2 0 0 0 2,2 h 2 a 2,2 0 0 0 2,-2 V 35 A 2,2 0 0 0 9,33 Z m 0,4 H 7 v -2 h 2 z"
+       id="path132" />
+    <path
+       d="m 16,33 h -2 a 2,2 0 0 0 -2,2 v 2 a 2,2 0 0 0 2,2 h 2 a 2,2 0 0 0 2,-2 v -2 a 2,2 0 0 0 -2,-2 z m 0,4 h -2 v -2 h 2 z"
+       id="path134" />
+    <path
+       d="m 23,33 h -2 a 2,2 0 0 0 -2,2 v 2 a 2,2 0 0 0 2,2 h 2 a 2,2 0 0 0 2,-2 v -2 a 2,2 0 0 0 -2,-2 z m 0,4 h -2 v -2 h 2 z"
+       id="path136" />
+    <path
+       d="m 47,45 h -3 a 1,1 0 0 0 -1,1 v 3 a 1,1 0 0 0 1,1 h 3 a 1,1 0 0 0 1,-1 v -3 a 1,1 0 0 0 -1,-1 z m -1,3 h -1 v -1 h 1 z"
+       id="path138" />
+    <path
+       d="m 53,45 h -3 a 1,1 0 0 0 -1,1 v 3 a 1,1 0 0 0 1,1 h 3 a 1,1 0 0 0 1,-1 v -3 a 1,1 0 0 0 -1,-1 z m -1,3 h -1 v -1 h 1 z"
+       id="path140" />
+    <path
+       d="m 59,45 h -3 a 1,1 0 0 0 -1,1 v 3 a 1,1 0 0 0 1,1 h 3 a 1,1 0 0 0 1,-1 v -3 a 1,1 0 0 0 -1,-1 z m -1,3 h -1 v -1 h 1 z"
+       id="path142" />
+    <path
+       d="m 47,51 h -3 a 1,1 0 0 0 -1,1 v 3 a 1,1 0 0 0 1,1 h 3 a 1,1 0 0 0 1,-1 v -3 a 1,1 0 0 0 -1,-1 z m -1,3 h -1 v -1 h 1 z"
+       id="path144" />
+    <path
+       d="m 53,51 h -3 a 1,1 0 0 0 -1,1 v 3 a 1,1 0 0 0 1,1 h 3 a 1,1 0 0 0 1,-1 v -3 a 1,1 0 0 0 -1,-1 z m -1,3 h -1 v -1 h 1 z"
+       id="path146" />
+    <path
+       d="m 59,51 h -3 a 1,1 0 0 0 -1,1 v 3 a 1,1 0 0 0 1,1 h 3 a 1,1 0 0 0 1,-1 v -3 a 1,1 0 0 0 -1,-1 z m -1,3 h -1 v -1 h 1 z"
+       id="path148" />
+  </g>
+  <metadata
+     id="metadata159">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>a</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

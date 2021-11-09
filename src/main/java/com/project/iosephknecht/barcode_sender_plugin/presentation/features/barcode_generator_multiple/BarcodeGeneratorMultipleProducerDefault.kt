@@ -9,8 +9,8 @@ import com.project.iosephknecht.barcode_sender_plugin.presentation.features.barc
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.barcode_generator_multiple.BarcodeGeneratorMultipleFeatureContract.Action
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.barcode_generator_multiple.BarcodeGeneratorMultipleFeatureContract.Effect
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.barcode_generator_multiple.BarcodeGeneratorMultipleFeatureContract.BarcodeList
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.SchedulersContainer
 import io.reactivex.rxjava3.core.Observable
-import io.reactivex.rxjava3.schedulers.Schedulers
 
 /**
  * Default implementation [Producer].
@@ -20,7 +20,8 @@ import io.reactivex.rxjava3.schedulers.Schedulers
  * @author IosephKnecht
  */
 internal class BarcodeGeneratorMultipleProducerDefault(
-    private val barcodeGenerator: BarcodeGenerator
+    private val barcodeGenerator: BarcodeGenerator,
+    private val schedulersContainer: SchedulersContainer
 ) : Producer,
     ConfigurableStateOwner<State> by DefaultConfigurableStateOwner() {
 
@@ -44,7 +45,7 @@ internal class BarcodeGeneratorMultipleProducerDefault(
             .map<Effect> { BarcodeList(barcodeType, ArrayList(it)).run(Effect::SuccessGenerateBarcodeList) }
             .onErrorReturn { Effect.FailureGenerateBarcodeList(it) }
             .startWithItem(Effect.StartGenerateBarcodeList)
-            .subscribeOn(Schedulers.io())
+            .subscribeOn(schedulersContainer.io.get())
     }
 
     private fun setBarcodeCount(state: State, barcodeCount: Int): Observable<Effect> {

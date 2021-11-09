@@ -3,6 +3,8 @@ package com.project.iosephknecht.barcode_sender_plugin.presentation.features.bar
 import com.project.iosephknecht.barcode_sender_plugin.domain.LocalStorage
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.barcode_generator.BarcodeGeneratorFeatureContract
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.Logger
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.SchedulersContainer
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.Swing
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.intellijIdeaLogger
 import io.reactivex.rxjava3.core.Observable
 
@@ -15,7 +17,8 @@ import io.reactivex.rxjava3.core.Observable
  */
 internal class BarcodeEditorFeatureFactoryDefault(
     private val localStorage: LocalStorage,
-    private val barcodeGeneratorNews: Observable<BarcodeGeneratorFeatureContract.News>
+    private val barcodeGeneratorNews: Observable<BarcodeGeneratorFeatureContract.News>,
+    private val schedulersContainer: SchedulersContainer = SchedulersContainer.Swing
 ) {
 
     private val reducer by lazy {
@@ -39,7 +42,8 @@ internal class BarcodeEditorFeatureFactoryDefault(
             reducer = reducer,
             producer = producer,
             bootstrapper = bootstrapper,
-            logger = logger
+            logger = logger,
+            schedulersContainer = schedulersContainer
         )
     }
 }

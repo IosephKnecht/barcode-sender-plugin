@@ -20,7 +20,8 @@ internal class BarcodeGeneratorFeatureDefault(
     private val producer: Producer,
     private val actionMapper: ActionMapper,
     private val newsMapper: NewsMapper,
-    private val logger: Logger
+    private val logger: Logger,
+    private val schedulersContainer: SchedulersContainer
 ) : Feature,
     Store<State, Intent, News> by DefaultStore(
         initialState = State.Empty,
@@ -29,5 +30,6 @@ internal class BarcodeGeneratorFeatureDefault(
         actionMapper = actionMapper,
         newsMapper = newsMapper,
         actionBinder = ActionBinder.bindAllSwitchMap(),
-        logger = logger
+        logger = logger,
+        schedulersContainer = schedulersContainer
     )

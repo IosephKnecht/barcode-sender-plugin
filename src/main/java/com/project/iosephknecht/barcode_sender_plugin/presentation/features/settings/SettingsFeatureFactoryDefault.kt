@@ -1,6 +1,8 @@
 package com.project.iosephknecht.barcode_sender_plugin.presentation.features.settings
 
 import com.project.iosephknecht.barcode_sender_plugin.domain.SettingsStorage
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.SchedulersContainer
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.Swing
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.settings.SettingsFeatureContract.*
 
 /**
@@ -11,7 +13,8 @@ import com.project.iosephknecht.barcode_sender_plugin.presentation.features.sett
  * @author IosephKnecht
  */
 internal class SettingsFeatureFactoryDefault(
-    private val settingsStorage: SettingsStorage
+    private val settingsStorage: SettingsStorage,
+    private val schedulersContainer: SchedulersContainer = SchedulersContainer.Swing
 ) {
 
     private val reducer by lazy {
@@ -35,7 +38,8 @@ internal class SettingsFeatureFactoryDefault(
             reducer = reducer,
             producer = producer,
             actionMapper = actionMapper,
-            newsMapper = newsMapper
+            newsMapper = newsMapper,
+            schedulersContainer = schedulersContainer
         )
     }
 }

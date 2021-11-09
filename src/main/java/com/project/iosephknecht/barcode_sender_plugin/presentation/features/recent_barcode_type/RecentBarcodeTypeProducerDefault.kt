@@ -4,13 +4,13 @@ import com.project.iosephknecht.barcode_sender_plugin.data.BarcodeType
 import com.project.iosephknecht.barcode_sender_plugin.domain.LocalStorage
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.ConfigurableStateOwner
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.DefaultConfigurableStateOwner
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.SchedulersContainer
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.recent_barcode_type.RecentBarcodeTypeFeatureContract.Producer
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.recent_barcode_type.RecentBarcodeTypeFeatureContract.State
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.recent_barcode_type.RecentBarcodeTypeFeatureContract.Action
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.recent_barcode_type.RecentBarcodeTypeFeatureContract.Effect
 import hu.akarnokd.rxjava3.swing.SwingSchedulers
 import io.reactivex.rxjava3.core.Observable
-import io.reactivex.rxjava3.schedulers.Schedulers
 
 /**
  * Default implementation [Producer].
@@ -18,7 +18,8 @@ import io.reactivex.rxjava3.schedulers.Schedulers
  * @author IosephKnecht
  */
 internal class RecentBarcodeTypeProducerDefault(
-    private val localStorage: LocalStorage
+    private val localStorage: LocalStorage,
+    private val schedulersContainer: SchedulersContainer
 ) : Producer,
     ConfigurableStateOwner<State> by DefaultConfigurableStateOwner() {
 
@@ -42,7 +43,7 @@ internal class RecentBarcodeTypeProducerDefault(
             }
             .onErrorReturn { Effect.FailureInitialize(it) }
             .startWithItem(Effect.StartInitialize)
-            .subscribeOn(Schedulers.computation())
+            .subscribeOn(schedulersContainer.computation.get())
     }
 
     private fun choiceBarcode(state: State, barcodeType: BarcodeType): Observable<Effect> {
@@ -70,6 +71,6 @@ internal class RecentBarcodeTypeProducerDefault(
                     .startWithItem(Effect.StartChangeRecent(barcodeType))
                     .subscribeOn(SwingSchedulers.edt())
             }
-            .subscribeOn(Schedulers.computation())
+            .subscribeOn(schedulersContainer.computation.get())
     }
 }

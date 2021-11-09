@@ -1,12 +1,13 @@
 package com.project.iosephknecht.barcode_sender_plugin.presentation.multiple_choice.component
 
 import com.intellij.openapi.diagnostic.Logger
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.SchedulersContainer
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.Swing
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.states
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.devices.devices
 import hu.akarnokd.rxjava3.swing.SwingSchedulers
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
-import io.reactivex.rxjava3.schedulers.Schedulers
 import io.reactivex.rxjava3.subjects.BehaviorSubject
 import io.reactivex.rxjava3.subjects.PublishSubject
 import java.util.concurrent.TimeUnit
@@ -26,7 +27,8 @@ import com.project.iosephknecht.barcode_sender_plugin.presentation.features.devi
 internal class MultipleChoiceComponentDefault(
     private val devicesFeature: DevicesFeature,
     private val devicesSelector: DevicesSelector,
-    private val logger: Logger
+    private val logger: Logger,
+    schedulersContainer: SchedulersContainer = SchedulersContainer.Swing
 ) : MultipleChoiceComponent {
 
     private val featuresDisposable = CompositeDisposable()
@@ -60,7 +62,7 @@ internal class MultipleChoiceComponentDefault(
                 devicesSelector.let(featuresDisposable::add)
                 devicesFeature.accept(DevicesIntent.Reload)
             }
-            .subscribeOn(Schedulers.computation())
+            .subscribeOn(schedulersContainer.computation.get())
             .observeOn(SwingSchedulers.edt())
             .subscribe(
                 states::onNext,

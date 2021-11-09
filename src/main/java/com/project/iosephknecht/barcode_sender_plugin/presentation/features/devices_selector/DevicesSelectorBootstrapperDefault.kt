@@ -1,16 +1,18 @@
 package com.project.iosephknecht.barcode_sender_plugin.presentation.features.devices_selector
 
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.*
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.ConfigurableStateOwner
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.DefaultConfigurableStateOwner
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.SchedulersContainer
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.news
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.states
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.device_selector.DeviceSelectorFeatureContract
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.devices.DevicesFeatureContract
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.devices.devices
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.devices_selector.DevicesSelectorFeatureContract.*
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.devices_selector.DevicesSelectorFeatureContract.Bootstrapper
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Observer
-import io.reactivex.rxjava3.schedulers.Schedulers
 
 /**
  * Implementation for [Bootstrapper].
@@ -22,7 +24,8 @@ import io.reactivex.rxjava3.schedulers.Schedulers
  */
 internal class DevicesSelectorBootstrapperDefault(
     private val devicesFeature: DevicesFeatureContract.Feature,
-    private val deviceSelectorFeature: DeviceSelectorFeatureContract.Feature
+    private val deviceSelectorFeature: DeviceSelectorFeatureContract.Feature,
+    private val schedulersContainer: SchedulersContainer
 ) : Bootstrapper,
     ConfigurableStateOwner<State> by DefaultConfigurableStateOwner() {
 
@@ -36,7 +39,7 @@ internal class DevicesSelectorBootstrapperDefault(
             }
             .filter { it.isNotEmpty() }
             .map { Intent.ResetSelection(*it.toTypedArray()) }
-            .subscribeOn(Schedulers.computation())
+            .subscribeOn(schedulersContainer.computation.get())
 
         val selectorActions = deviceSelectorFeature.news
             .filter { news ->
@@ -44,7 +47,7 @@ internal class DevicesSelectorBootstrapperDefault(
                     news is DeviceSelectorFeatureContract.News.ResetSelected
             }
             .map { Intent.ResetSelection(*state.devices.toTypedArray()) }
-            .subscribeOn(Schedulers.computation())
+            .subscribeOn(schedulersContainer.computation.get())
 
         Observable.merge(devicesActions, selectorActions)
             .subscribe(observer)

@@ -2,6 +2,7 @@ package com.project.iosephknecht.barcode_sender_plugin.presentation.features.dev
 
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.DefaultStore
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.Logger
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.SchedulersContainer
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.Store
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.devices_selector.DevicesSelectorFeatureContract.*
 
@@ -18,13 +19,15 @@ internal class DevicesSelectorFeatureDefault(
     reducer: Reducer,
     producer: Producer,
     bootstrapper: Bootstrapper,
-    logger: Logger
+    logger: Logger,
+    schedulersContainer: SchedulersContainer
 ) : Feature,
     Store<State, Intent, Nothing> by DefaultStore(
         initialState = State(emptySet()),
         reducer = reducer,
         producer = producer,
-        bootstrapper = bootstrapper,
         actionMapper = { _, intent -> intent },
-        logger = logger
+        bootstrapper = bootstrapper,
+        logger = logger,
+        schedulersContainer = schedulersContainer
     )

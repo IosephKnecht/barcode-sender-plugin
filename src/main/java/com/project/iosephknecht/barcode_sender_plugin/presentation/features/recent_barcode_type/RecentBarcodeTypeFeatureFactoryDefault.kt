@@ -3,6 +3,8 @@ package com.project.iosephknecht.barcode_sender_plugin.presentation.features.rec
 import com.project.iosephknecht.barcode_sender_plugin.domain.LocalStorage
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.barcode_generator.BarcodeGeneratorFeatureContract
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.Logger
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.SchedulersContainer
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.Swing
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.intellijIdeaLogger
 import io.reactivex.rxjava3.core.Observable
 
@@ -16,7 +18,8 @@ import io.reactivex.rxjava3.core.Observable
  */
 internal class RecentBarcodeTypeFeatureFactoryDefault(
     private val localStorage: LocalStorage,
-    private val barcodeGeneratorNews: Observable<BarcodeGeneratorFeatureContract.News>
+    private val barcodeGeneratorNews: Observable<BarcodeGeneratorFeatureContract.News>,
+    private val schedulersContainer: SchedulersContainer = SchedulersContainer.Swing
 ) {
 
     private val reducer by lazy {
@@ -24,7 +27,7 @@ internal class RecentBarcodeTypeFeatureFactoryDefault(
     }
 
     private val producer by lazy {
-        RecentBarcodeTypeProducerDefault(localStorage)
+        RecentBarcodeTypeProducerDefault(localStorage, schedulersContainer)
     }
 
     private val bootstrapper by lazy {
@@ -50,7 +53,8 @@ internal class RecentBarcodeTypeFeatureFactoryDefault(
             actionMapper = actionMapper,
             newsMapper = newsMapper,
             bootstrapper = bootstrapper,
-            logger = logger
+            logger = logger,
+            schedulersContainer = schedulersContainer
         )
     }
 }

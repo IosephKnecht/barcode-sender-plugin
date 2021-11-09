@@ -2,6 +2,8 @@ package com.project.iosephknecht.barcode_sender_plugin.presentation.features.dev
 
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.Logger
 import com.project.iosephknecht.barcode_sender_plugin.domain.SettingsStorage
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.SchedulersContainer
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.Swing
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.devices.DevicesFeatureContract
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.intellijIdeaLogger
 
@@ -15,7 +17,8 @@ import com.project.iosephknecht.barcode_sender_plugin.presentation.features.inte
  */
 internal class DeviceSelectorFeatureFactoryDefault(
     private val devicesFeature: DevicesFeatureContract.Feature,
-    private val settingsStorage: SettingsStorage
+    private val settingsStorage: SettingsStorage,
+    private val schedulersContainer: SchedulersContainer = SchedulersContainer.Swing
 ) {
 
     private val reducer by lazy {
@@ -23,11 +26,11 @@ internal class DeviceSelectorFeatureFactoryDefault(
     }
 
     private val producer by lazy {
-        DeviceSelectorFeatureProducerDefault(settingsStorage)
+        DeviceSelectorFeatureProducerDefault(settingsStorage, schedulersContainer)
     }
 
     private val bootstrapper by lazy {
-        DeviceSelectorFeatureBootstrapperDefault(devicesFeature)
+        DeviceSelectorFeatureBootstrapperDefault(devicesFeature, schedulersContainer)
     }
 
     private val actionMapper by lazy {
@@ -49,7 +52,8 @@ internal class DeviceSelectorFeatureFactoryDefault(
             bootstrapper = bootstrapper,
             actionMapper = actionMapper,
             newsMapper = newsMapper,
-            logger = logger
+            logger = logger,
+            schedulersContainer = schedulersContainer
         )
     }
 }

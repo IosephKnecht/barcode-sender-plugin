@@ -2,13 +2,14 @@ package com.project.iosephknecht.barcode_sender_plugin.presentation.multiple_gen
 
 import com.intellij.openapi.diagnostic.Logger
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.barcode_generator_multiple.*
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.SchedulersContainer
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.Swing
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.news
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.states
 import com.project.iosephknecht.barcode_sender_plugin.presentation.multiple_generator.component.MultipleBarcodeGeneratorComponent.Event
 import com.project.iosephknecht.barcode_sender_plugin.presentation.multiple_generator.component.MultipleBarcodeGeneratorComponent.State
 import hu.akarnokd.rxjava3.swing.SwingSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
-import io.reactivex.rxjava3.schedulers.Schedulers
 import io.reactivex.rxjava3.subjects.BehaviorSubject
 import io.reactivex.rxjava3.subjects.PublishSubject
 import java.util.concurrent.TimeUnit
@@ -22,7 +23,8 @@ import java.util.concurrent.TimeUnit
  */
 internal class MultipleBarcodeGeneratorComponentDefault(
     private val multipleBarcodeGeneratorFeature: BarcodeGeneratorMultipleFeatureContract.Feature,
-    private val logger: Logger
+    private val logger: Logger,
+    schedulersContainer: SchedulersContainer = SchedulersContainer.Swing
 ) : MultipleBarcodeGeneratorComponent {
 
     private val featureDisposables = CompositeDisposable()
@@ -61,7 +63,7 @@ internal class MultipleBarcodeGeneratorComponentDefault(
                     isProcessGenerate = state.isProcessGenerating
                 )
             }
-            .subscribeOn(Schedulers.computation())
+            .subscribeOn(schedulersContainer.computation.get())
             .observeOn(SwingSchedulers.edt())
             .subscribe(
                 state::onNext,

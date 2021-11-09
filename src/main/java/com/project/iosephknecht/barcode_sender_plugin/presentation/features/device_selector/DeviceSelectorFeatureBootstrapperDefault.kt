@@ -2,13 +2,13 @@ package com.project.iosephknecht.barcode_sender_plugin.presentation.features.dev
 
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.ConfigurableStateOwner
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.DefaultConfigurableStateOwner
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.SchedulersContainer
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.news
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.device_selector.DeviceSelectorFeatureContract.*
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.devices.DevicesFeatureContract
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.devices.devices
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Observer
-import io.reactivex.rxjava3.schedulers.Schedulers
 
 /**
  * Implementation for [DeviceSelectorFeatureContract.Bootstrapper]
@@ -18,7 +18,8 @@ import io.reactivex.rxjava3.schedulers.Schedulers
  * @author IosephKnecht
  */
 internal class DeviceSelectorFeatureBootstrapperDefault(
-    private val devicesFeature: DevicesFeatureContract.Feature
+    private val devicesFeature: DevicesFeatureContract.Feature,
+    private val schedulersContainer: SchedulersContainer
 ) : Bootstrapper,
     ConfigurableStateOwner<State> by DefaultConfigurableStateOwner() {
 
@@ -52,7 +53,7 @@ internal class DeviceSelectorFeatureBootstrapperDefault(
                     false -> Observable.empty()
                 }
             }
-            .subscribeOn(Schedulers.computation())
+            .subscribeOn(schedulersContainer.computation.get())
             .subscribe(observer)
     }
 }

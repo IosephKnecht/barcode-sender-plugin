@@ -5,12 +5,12 @@ import com.android.ddmlib.NullOutputReceiver
 import com.project.iosephknecht.barcode_sender_plugin.domain.SettingsStorage
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.ConfigurableStateOwner
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.DefaultConfigurableStateOwner
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.SchedulersContainer
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.device_selector.DeviceSelectorFeatureContract.*
 import io.reactivex.rxjava3.core.Completable
 import io.reactivex.rxjava3.core.Maybe
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Single
-import io.reactivex.rxjava3.schedulers.Schedulers
 
 /**
  * Implementation effect producer for device selector feature.
@@ -20,7 +20,8 @@ import io.reactivex.rxjava3.schedulers.Schedulers
  * @author IosephKnecht
  */
 internal class DeviceSelectorFeatureProducerDefault(
-    private val settingsStorage: SettingsStorage
+    private val settingsStorage: SettingsStorage,
+    private val schedulersContainer: SchedulersContainer
 ) : Producer,
     ConfigurableStateOwner<State> by DefaultConfigurableStateOwner() {
 
@@ -60,7 +61,7 @@ internal class DeviceSelectorFeatureProducerDefault(
             )
             .onErrorReturn { Effect.FailureInitialization(it, ErrorReason.UNKNOWN) }
             .startWithItem(Effect.StartInitialization)
-            .subscribeOn(Schedulers.io())
+            .subscribeOn(schedulersContainer.io.get())
     }
 
     private fun successChoiceMultipleDevice(
@@ -131,6 +132,6 @@ internal class DeviceSelectorFeatureProducerDefault(
                 "am broadcast -a $barcodeReceiverKey --es EXTRA_STRING_BARCODE \"${barcode}\"",
                 NullOutputReceiver.getReceiver()
             )
-        }.subscribeOn(Schedulers.io())
+        }.subscribeOn(schedulersContainer.io.get())
     }
 }

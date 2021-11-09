@@ -6,7 +6,7 @@ import io.reactivex.rxjava3.core.Observable
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.barcode_generator.BarcodeGeneratorFeatureContract.Producer
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.barcode_generator.BarcodeGeneratorFeatureContract.Action
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.barcode_generator.BarcodeGeneratorFeatureContract.Effect
-import io.reactivex.rxjava3.schedulers.Schedulers
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.SchedulersContainer
 
 /**
  * Default implementation [Producer].
@@ -16,7 +16,8 @@ import io.reactivex.rxjava3.schedulers.Schedulers
  * @author IosephKnecht
  */
 internal class BarcodeGeneratorProducerDefault(
-    private val barcodeGenerator: BarcodeGenerator
+    private val barcodeGenerator: BarcodeGenerator,
+    private val schedulersContainer: SchedulersContainer
 ) : Producer {
 
     override fun produce(action: Action): Observable<Effect> {
@@ -30,6 +31,6 @@ internal class BarcodeGeneratorProducerDefault(
             .map<Effect> { Effect.SuccessGenerateBarcode(it) }
             .onErrorReturn { Effect.FailureGenerateBarcode(it) }
             .startWithItem(Effect.StartGenerateBarcode(barcodeType))
-            .subscribeOn(Schedulers.computation())
+            .subscribeOn(schedulersContainer.computation.get())
     }
 }

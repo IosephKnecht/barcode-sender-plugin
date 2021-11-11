@@ -3,6 +3,8 @@ package com.project.iosephknecht.barcode_sender_plugin.presentation.features.bar
 import com.project.iosephknecht.barcode_sender_plugin.domain.BarcodeGenerator
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.barcode_generator.BarcodeGeneratorFeatureContract.*
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.Logger
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.SchedulersContainer
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.Swing
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.intellijIdeaLogger
 
 /**
@@ -13,7 +15,8 @@ import com.project.iosephknecht.barcode_sender_plugin.presentation.features.inte
  * @author IosephKnecht
  */
 internal class BarcodeGeneratorFeatureFactoryDefault(
-    private val barcodeGenerator: BarcodeGenerator
+    private val barcodeGenerator: BarcodeGenerator,
+    private val schedulersContainer: SchedulersContainer = SchedulersContainer.Swing
 ) {
 
     private val reducer by lazy {
@@ -21,7 +24,7 @@ internal class BarcodeGeneratorFeatureFactoryDefault(
     }
 
     private val producer by lazy {
-        BarcodeGeneratorProducerDefault(barcodeGenerator)
+        BarcodeGeneratorProducerDefault(barcodeGenerator, schedulersContainer)
     }
 
     private val actionMapper by lazy {
@@ -42,7 +45,8 @@ internal class BarcodeGeneratorFeatureFactoryDefault(
             producer = producer,
             actionMapper = actionMapper,
             newsMapper = newsMapper,
-            logger = logger
+            logger = logger,
+            schedulersContainer = schedulersContainer
         )
     }
 }

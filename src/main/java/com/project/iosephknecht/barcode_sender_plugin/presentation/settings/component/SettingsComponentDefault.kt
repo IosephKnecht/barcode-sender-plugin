@@ -1,11 +1,12 @@
 package com.project.iosephknecht.barcode_sender_plugin.presentation.settings.component
 
 import com.intellij.openapi.diagnostic.Logger
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.SchedulersContainer
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.Swing
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.states
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.settings.*
 import hu.akarnokd.rxjava3.swing.SwingSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
-import io.reactivex.rxjava3.schedulers.Schedulers
 import io.reactivex.rxjava3.subjects.BehaviorSubject
 import io.reactivex.rxjava3.subjects.PublishSubject
 import java.util.concurrent.TimeUnit
@@ -19,7 +20,8 @@ import java.util.concurrent.TimeUnit
  */
 internal class SettingsComponentDefault(
     private val settingsFeature: SettingsFeatureContract.Feature,
-    private val logger: Logger
+    private val logger: Logger,
+    schedulersContainer: SchedulersContainer = SchedulersContainer.Swing
 ) : SettingsComponent {
 
     private val featureDisposables = CompositeDisposable()
@@ -44,7 +46,7 @@ internal class SettingsComponentDefault(
                     isChanged = state.isHaveChanges
                 )
             }
-            .subscribeOn(Schedulers.computation())
+            .subscribeOn(schedulersContainer.computation.get())
             .observeOn(SwingSchedulers.edt())
             .doOnSubscribe { settingsFeature.accept(SettingsFeatureContract.Intent.LoadSettings) }
             .subscribe(

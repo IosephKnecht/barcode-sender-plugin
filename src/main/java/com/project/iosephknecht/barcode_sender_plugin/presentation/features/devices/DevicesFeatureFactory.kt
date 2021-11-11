@@ -1,9 +1,13 @@
 package com.project.iosephknecht.barcode_sender_plugin.presentation.features.devices
 
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.Logger
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.SchedulersContainer
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.Swing
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.intellijIdeaLogger
 
-internal class DevicesFeatureFactory {
+internal class DevicesFeatureFactory(
+    private val schedulersContainer: SchedulersContainer = SchedulersContainer.Swing
+) {
 
     private val bootstrapper by lazy {
         DevicesBootstrapper()
@@ -31,7 +35,8 @@ internal class DevicesFeatureFactory {
             producer = effectProducer,
             reducer = reducer,
             newsMapper = newsMapper,
-            logger = logger
+            logger = logger,
+            schedulersContainer = schedulersContainer
         )
     }
 }

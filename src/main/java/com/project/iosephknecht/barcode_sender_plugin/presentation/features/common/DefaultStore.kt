@@ -1,6 +1,5 @@
 package com.project.iosephknecht.barcode_sender_plugin.presentation.features.common
 
-import hu.akarnokd.rxjava3.swing.SwingSchedulers
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.CompositeDisposable
@@ -44,7 +43,8 @@ internal class DefaultStore<State : Any, Intent : Any, Action : Any, Effect : An
     private val bootstrapper: Bootstrapper<State, Action>? = null,
     newsMapper: NewsMapper<State, Effect, News>? = null,
     actionBinder: ActionBinder<Action>? = null,
-    logger: Logger = Logger.printStackTraceLogger()
+    logger: Logger = Logger.printStackTraceLogger(),
+    schedulersContainer: SchedulersContainer
 ) : Store<State, Intent, News> {
 
     private val actionSubject = PublishSubject.create<Action>()
@@ -73,7 +73,7 @@ internal class DefaultStore<State : Any, Intent : Any, Action : Any, Effect : An
         }
 
         effects
-            .observeOn(SwingSchedulers.edt())
+            .observeOn(schedulersContainer.main.get())
             .subscribe(
                 { effect ->
                     val previousState = stateSubject.value!!
@@ -89,7 +89,7 @@ internal class DefaultStore<State : Any, Intent : Any, Action : Any, Effect : An
 
         bootstrapper
             ?.actions
-            ?.observeOn(SwingSchedulers.edt())
+            ?.observeOn(schedulersContainer.main.get())
             ?.subscribe(
                 actionSubject::onNext,
                 logger::error

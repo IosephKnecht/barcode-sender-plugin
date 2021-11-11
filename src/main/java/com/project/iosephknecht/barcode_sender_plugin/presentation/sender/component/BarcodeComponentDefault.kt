@@ -13,12 +13,13 @@ import com.project.iosephknecht.barcode_sender_plugin.presentation.features.devi
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.devices.DevicesFeatureContract
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.devices_selector.DevicesSelectorFeatureContract
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.barcode_editor.BarcodeEditorFeatureContract
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.SchedulersContainer
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.Swing
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.recent_barcode_type.RecentBarcodeTypeFeatureContract
 import com.project.iosephknecht.barcode_sender_plugin.presentation.utils.deviceName
 import hu.akarnokd.rxjava3.swing.SwingSchedulers
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
-import io.reactivex.rxjava3.schedulers.Schedulers
 import io.reactivex.rxjava3.subjects.BehaviorSubject
 import io.reactivex.rxjava3.subjects.PublishSubject
 import java.util.concurrent.TimeUnit
@@ -41,7 +42,8 @@ internal class BarcodeComponentDefault(
     private val barcodeEditorFeature: BarcodeEditorFeatureContract.Feature,
     private val barcodeGeneratorFeature: BarcodeGeneratorFeatureContract.Feature,
     private val recentBarcodeTypeFeature: RecentBarcodeTypeFeatureContract.Feature,
-    private val logger: Logger
+    private val logger: Logger,
+    schedulersContainer: SchedulersContainer = SchedulersContainer.Swing
 ) : BarcodeComponent {
 
     override val state: BehaviorSubject<BarcodeComponent.State> = BehaviorSubject.create()
@@ -159,7 +161,7 @@ internal class BarcodeComponentDefault(
                 errorMessage = errorMessageResource?.let(stringProvider::getString)
             )
         }
-            .subscribeOn(Schedulers.computation())
+            .subscribeOn(schedulersContainer.computation.get())
             .observeOn(SwingSchedulers.edt())
             .doOnSubscribe {
                 deviceSelectorFeature.accept(DeviceSelectorFeatureContract.Intent.Initialize)

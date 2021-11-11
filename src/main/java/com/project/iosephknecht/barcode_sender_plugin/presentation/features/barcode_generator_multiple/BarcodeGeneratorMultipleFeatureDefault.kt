@@ -3,9 +3,11 @@ package com.project.iosephknecht.barcode_sender_plugin.presentation.features.bar
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.barcode_generator_multiple.BarcodeGeneratorMultipleFeatureContract.*
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.barcode_generator_multiple.BarcodeGeneratorMultipleFeatureContract.ActionMapper
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.barcode_generator_multiple.BarcodeGeneratorMultipleFeatureContract.NewsMapper
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.*
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.ActionBinder
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.DefaultStore
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.Logger
+import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.SchedulersContainer
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.Store
 import com.project.iosephknecht.barcode_sender_plugin.presentation.features.common.bindAllSwitchMap
 
@@ -26,7 +28,8 @@ internal class BarcodeGeneratorMultipleFeatureDefault(
     private val producer: Producer,
     private val actionMapper: ActionMapper,
     private val newsMapper: NewsMapper,
-    private val logger: Logger
+    private val logger: Logger,
+    private val schedulersContainer: SchedulersContainer
 ) : Feature,
     Store<State, Intent, News> by DefaultStore(
         initialState = initialState,
@@ -35,5 +38,6 @@ internal class BarcodeGeneratorMultipleFeatureDefault(
         actionMapper = actionMapper,
         newsMapper = newsMapper,
         actionBinder = ActionBinder.bindAllSwitchMap(),
-        logger = logger
+        logger = logger,
+        schedulersContainer = schedulersContainer
     )

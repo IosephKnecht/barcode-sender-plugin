@@ -1,6 +1,5 @@
 package com.project.iosephknecht.barcode_sender_plugin.presentation.features.common
 
-import hu.akarnokd.rxjava3.swing.SwingSchedulers
 import io.reactivex.rxjava3.core.Scheduler
 import io.reactivex.rxjava3.schedulers.Schedulers
 
@@ -53,19 +52,7 @@ internal fun interface SchedulerProvider {
  * @author IosephKnecht
  */
 internal class DefaultSchedulersContainer(
-    override val computation: SchedulerProvider,
-    override val io: SchedulerProvider,
+    override val computation: SchedulerProvider = SchedulerProvider { Schedulers.computation() },
+    override val io: SchedulerProvider = SchedulerProvider { Schedulers.io() },
     override val main: SchedulerProvider
 ) : SchedulersContainer
-
-/**
- * Extension - value for get Swing [SchedulersContainer].
- *
- * @author IosephKnecht
- */
-internal val SchedulersContainer.Companion.Swing: SchedulersContainer
-    get() = DefaultSchedulersContainer(
-        computation = { Schedulers.computation() },
-        io = { Schedulers.io() },
-        main = { SwingSchedulers.edt() }
-    )

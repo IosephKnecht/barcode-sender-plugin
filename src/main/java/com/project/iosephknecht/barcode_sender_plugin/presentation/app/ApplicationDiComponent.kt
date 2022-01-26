@@ -22,6 +22,7 @@ import dagger.Provides
 @Component(modules = [ApplicationDiModule::class])
 internal interface ApplicationDiComponent {
 
+    val application: Application
     val localStorage: LocalStorage
     val settingsStorage: SettingsStorage
     val barcodeGenerator: BarcodeGenerator

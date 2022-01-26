@@ -14,15 +14,15 @@ for a bug, you can simply send it via IDE.
 
 ### Android studio requirements
 
-Android studio supported from version Arctic Fox Patch 1 (2020.3.1 Patch 1).
+Android studio supported from version `Android Studio Bumblebee (2021.1.1)`.
 
 1. Download [latest release plugin](https://github.com/IosephKnecht/barcode-sender-plugin/releases/tag/v1.0.0-alpha01)
 2. Install plugin from disk (File -> Settings -> Plugins -> Settings -> Install from disk)
 3. Set receiver key to settings for your app. (File -> Settings -> Tools -> Barcode Sender Settings Plugin)
 
-Settings                                         |  Plugin install settings
-:-----------------------------------------------:|:----------------------------------------------:
-![project settings](images/settings_screen.png)  |  ![plugins settings](images/plugins_screen.png)
+|                    Settings                     |            Plugin install settings             |
+|:-----------------------------------------------:|:----------------------------------------------:|
+| ![project settings](images/settings_screen.png) | ![plugins settings](images/plugins_screen.png) |
 
 ## Features
 

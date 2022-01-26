@@ -6,7 +6,7 @@ plugins {
 }
 
 group 'com.project.iosephknecht'
-version 'v1.0.0-alpha01'
+version 'v1.0.0-alpha01-211.7628.21'
 
 def idePathKey = 'ANDROID_STUDIO_PATH'
 def platformPrefix = 'AndroidStudio'
@@ -44,7 +44,7 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version = '203.7717.56'
+    version = '211.7628.21'
     type = 'IC'
     plugins = ['android']
 }
@@ -53,11 +53,7 @@ buildSearchableOptions {
 }
 patchPluginXml {
     changeNotes = """
-      - Fixed bug with no display multiple choice. <br>
-      - Fixed bug with wrong determinate uninitialized and failure initialize. <br>
-      - Fixed bug with not reset selected device after choice another device. <br>
-      - Added icons for selector. <br>
-      - Added plugin logo. <br>"""
+      - Raising the intellij version to 211.7628.21. <br>"""
 }
 runIde {
     if (localProperties.containsKey(idePathKey)) {

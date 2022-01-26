@@ -40,7 +40,7 @@ internal class SettingsDialog : Configurable, SettingsComponent.View {
     private val disposables = io.reactivex.rxjava3.disposables.CompositeDisposable()
 
     init {
-        Disposer.register(Disposer.get("ui"), disposable)
+        Disposer.register(Application.applicationDiComponent.application, disposable)
 
         disposable.defineNestedLifetime()
             .bracket(

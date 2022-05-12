@@ -1,21 +1,21 @@
 package com.project.iosephknecht.barcode_sender_plugin.presentation.app
 
 import com.intellij.ide.AppLifecycleListener
+import com.intellij.ide.ApplicationInitializedListener
 import com.intellij.openapi.application.ApplicationManager
-import com.intellij.openapi.project.Project
 
 /**
  * Implementation [AppLifecycleListener].
  *
  * @author IosephKnecht
  */
-internal object Application : AppLifecycleListener {
+@Suppress("UnstableApiUsage")
+internal object Application : ApplicationInitializedListener {
 
     lateinit var applicationDiComponent: ApplicationDiComponent
+        private set
 
-    override fun appStarting(projectFromCommandLine: Project?) {
-        super.appStarting(projectFromCommandLine)
-
+    override fun componentsInitialized() {
         applicationDiComponent = DaggerApplicationDiComponent.factory()
             .create(ApplicationManager.getApplication())
     }

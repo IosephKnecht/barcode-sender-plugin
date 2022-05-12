@@ -6,7 +6,7 @@ plugins {
 }
 
 group 'com.project.iosephknecht'
-version 'v1.0.0-alpha01-211.7628.21'
+version 'v1.0.0-alpha01-212.5712.43'
 
 def idePathKey = 'ANDROID_STUDIO_PATH'
 def platformPrefix = 'AndroidStudio'
@@ -44,7 +44,7 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version = '211.7628.21'
+    version = '212.5712.43'
     type = 'IC'
     plugins = ['android']
 }
@@ -53,7 +53,7 @@ buildSearchableOptions {
 }
 patchPluginXml {
     changeNotes = """
-      - Raising the intellij version to 211.7628.21. <br>"""
+      - Raising the intellij version to 212.5712.43. <br>"""
 }
 runIde {
     if (localProperties.containsKey(idePathKey)) {

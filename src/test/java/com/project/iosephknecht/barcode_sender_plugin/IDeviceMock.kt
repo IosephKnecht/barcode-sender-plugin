@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit
 internal fun mockDevice(
     name: String = "",
     serialNumber: String = "",
+    avdPath: String = "",
     avdName: String = name,
     isEmulator: Boolean = true,
     state: IDevice.DeviceState = IDevice.DeviceState.ONLINE,
@@ -26,6 +27,7 @@ internal fun mockDevice(
 ) = IDeviceMock(
     name = name,
     serialNumber = serialNumber,
+    avdPath = avdPath,
     avdName = avdName,
     isEmulator = isEmulator,
     state = state,
@@ -43,6 +45,7 @@ internal fun mockDevice(
 internal class IDeviceMock constructor(
     private val name: String,
     private val serialNumber: String,
+    private val avdPath: String,
     private val avdName: String,
     private val isEmulator: Boolean,
     private val state: IDevice.DeviceState,
@@ -87,6 +90,8 @@ internal class IDeviceMock constructor(
     }
 
     override fun getSerialNumber(): String = serialNumber
+
+    override fun getAvdPath(): String = avdPath
 
     override fun getAvdName(): String = avdName
 

@@ -4,6 +4,7 @@ import com.android.ddmlib.*
 import com.android.ddmlib.log.LogReceiver
 import com.android.sdklib.AndroidVersion
 import com.google.common.util.concurrent.Futures
+import com.google.common.util.concurrent.ListenableFuture
 import java.io.File
 import java.util.concurrent.Future
 import java.util.concurrent.TimeUnit
@@ -62,6 +63,7 @@ internal class IDeviceMock constructor(
 
     override fun getName(): String = name
 
+    @Deprecated("Deprecated in Java", ReplaceWith("Unit"))
     override fun executeShellCommand(
         command: String?,
         receiver: IShellOutputReceiver?,
@@ -85,7 +87,7 @@ internal class IDeviceMock constructor(
         maxTimeUnits: TimeUnit?
     ) = Unit
 
-    override fun getSystemProperty(name: String?): Future<String> {
+    override fun getSystemProperty(name: String?): ListenableFuture<String> {
         return Futures.immediateFuture("")
     }
 
@@ -97,16 +99,20 @@ internal class IDeviceMock constructor(
 
     override fun getState(): IDevice.DeviceState = state
 
+    @Deprecated("Deprecated in Java", ReplaceWith("hashMapOf()"))
     override fun getProperties(): MutableMap<String, String> = hashMapOf()
 
+    @Deprecated("Deprecated in Java", ReplaceWith("0"))
     override fun getPropertyCount(): Int = 0
 
     override fun getProperty(name: String?): String = ""
 
     override fun arePropertiesSet(): Boolean = false
 
+    @Deprecated("Deprecated in Java", ReplaceWith("\"\""))
     override fun getPropertySync(name: String?): String = ""
 
+    @Deprecated("Deprecated in Java", ReplaceWith("\"\""))
     override fun getPropertyCacheOrSync(name: String?): String = ""
 
     override fun supportsFeature(feature: IDevice.Feature?): Boolean = false
@@ -228,6 +234,7 @@ internal class IDeviceMock constructor(
     override fun removeRemotePackage(remoteFilePath: String?) = Unit
 
     override fun uninstallPackage(packageName: String?): String? = null
+    override fun uninstallApp(applicationID: String?, vararg extraArgs: String?): String? = null
 
     override fun reboot(into: String?) = Unit
 
@@ -235,9 +242,11 @@ internal class IDeviceMock constructor(
 
     override fun isRoot() = isRoot
 
+    @Deprecated("Deprecated in Java")
     override fun getBatteryLevel() = batteryLevel
 
 
+    @Deprecated("Deprecated in Java")
     override fun getBatteryLevel(freshnessMs: Long) = batteryLevel
 
 

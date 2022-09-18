@@ -1,7 +1,7 @@
 plugins {
-    id 'org.jetbrains.intellij' version '1.1.4'
-    id 'org.jetbrains.kotlin.jvm' version '1.5.31'
-    id 'org.jetbrains.kotlin.kapt' version '1.5.31'
+    id 'org.jetbrains.intellij' version '1.9.0'
+    id 'org.jetbrains.kotlin.jvm' version '1.5.10'
+    id 'org.jetbrains.kotlin.kapt' version '1.5.10'
     id 'java'
 }
 
@@ -20,11 +20,11 @@ repositories {
 }
 
 ext {
-    kotlin_version = '1.5.31'
-    rx_java_version = '3.1.2'
+    kotlin_version = '1.5.10'
+    rx_java_version = '3.1.5'
     rx_swing_version = '3.1.1'
-    dagger_version = '2.39.1'
-    junit_version = '5.8.1'
+    dagger_version = '2.43.2'
+    junit_version = '5.9.0'
 }
 
 dependencies {
@@ -42,24 +42,38 @@ dependencies {
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
 }
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+}
+
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
     version = '213.7172.25'
     type = 'IC'
     plugins = ['android']
 }
+
 buildSearchableOptions {
     enabled = false
 }
 patchPluginXml {
-    changeNotes = """
-      - Raising the intellij version to 213.7172.25. <br>"""
+    changeNotes.set("""
+      - Raising the intellij version to 213.7172.25. <br>
+      """
+    )
 }
 runIde {
     if (localProperties.containsKey(idePathKey)) {
         systemProperty('idea.platform.prefix', platformPrefix)
         ideDir = file(localProperties.getProperty(idePathKey))
     }
+}
+compileKotlin {
+    kotlinOptions.jvmTarget = "11"
+}
+
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "11"
 }
 test {
     useJUnitPlatform()

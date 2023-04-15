@@ -14,9 +14,9 @@ for a bug, you can simply send it via IDE.
 
 ### Android studio requirements
 
-Android studio supported from version `Android Studio Electric Eel (2022.1.1)`.
+Android studio supported from version `Android Studio Flamingo (2022.1.1)`.
 
-1. Download [latest release plugin](https://github.com/IosephKnecht/barcode-sender-plugin/releases/tag/v1.0.0-alpha01-221.6008.13)
+1. Download [latest release plugin](https://github.com/IosephKnecht/barcode-sender-plugin/releases/tag/v1.0.0-alpha01-222.4459.24)
 2. Install plugin from disk (File -> Settings -> Plugins -> Settings -> Install from disk)
 3. Set receiver key to settings for your app. (File -> Settings -> Tools -> Barcode Sender Settings Plugin)
 

@@ -3,13 +3,13 @@ import java.util.*
 import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 
 plugins {
-    id("org.jetbrains.intellij") version "1.12.0"
+    id("org.jetbrains.intellij") version "1.13.3"
     id("org.jetbrains.kotlin.jvm") version "1.8.0"
     id("org.jetbrains.kotlin.kapt") version "1.8.0"
 }
 
 group = ("com.project.iosephknecht")
-version = "v1.0.0-alpha01-221.6008.13"
+version = "v1.0.0-alpha01-222.4459.24"
 
 val idePathKey = "ANDROID_STUDIO_PATH"
 val platformPrefix = "AndroidStudio"
@@ -46,13 +46,13 @@ dependencies {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version.set("221.6008.13")
+    version.set("222.4459.24")
     type.set("IC")
     this.plugins.add("android")
 }
@@ -63,7 +63,7 @@ tasks.buildSearchableOptions {
 tasks.patchPluginXml {
     changeNotes.set(
         """
-      - Raising the intellij version to 221.6008.13. <br>
+      - Raising the intellij version to 222.4459.24. <br>
       """
     )
 }
@@ -74,13 +74,13 @@ tasks.runIde {
     }
 }
 tasks.withType(KotlinJvmCompile::class.java) {
-    kotlinOptions.jvmTarget = JavaVersion.VERSION_11.toString()
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
 }
 tasks.compileKotlin {
-    kotlinOptions.jvmTarget = JavaVersion.VERSION_11.toString()
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
 }
 tasks.compileTestKotlin {
-    kotlinOptions.jvmTarget = JavaVersion.VERSION_11.toString()
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
 }
 tasks.test {
     useJUnitPlatform()

@@ -9,7 +9,7 @@ plugins {
 }
 
 group = ("com.project.iosephknecht")
-version = "v1.0.0-alpha01-222.4459.24"
+version = "v1.0.0-alpha01-223.8836.35"
 
 val idePathKey = "ANDROID_STUDIO_PATH"
 val platformPrefix = "AndroidStudio"
@@ -52,7 +52,7 @@ java {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version.set("222.4459.24")
+    version.set("2022.3.1")
     type.set("IC")
     this.plugins.add("android")
 }
@@ -63,7 +63,7 @@ tasks.buildSearchableOptions {
 tasks.patchPluginXml {
     changeNotes.set(
         """
-      - Raising the intellij version to 222.4459.24. <br>
+      - Raising the intellij version to 223.8836.35. <br>
       """
     )
 }

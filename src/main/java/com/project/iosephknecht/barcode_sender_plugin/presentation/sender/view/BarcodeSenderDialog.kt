@@ -172,73 +172,73 @@ internal class BarcodeSenderDialog(private val project: Project) : DialogWrapper
         initialErrorLabel = JBLabel()
 
         disposable.defineNestedLifetime()
-            .bracket(
-                opening = {
-                    component.state
-                        .subscribe(
-                            { state ->
-                                val isSuccessInitializedComponent = state
-                                    .run { isProcessInitialize || isInitializedError }
-                                    .not()
+            .bracketIfAlive(opening = {
+                component.state
+                    .subscribe(
+                        { state ->
+                            val isSuccessInitializedComponent = state
+                                .run { isProcessInitialize || isInitializedError }
+                                .not()
 
-                                devicesComboBox.isVisible = isSuccessInitializedComponent
-                                textAreaContainer.isVisible = isSuccessInitializedComponent
-                                progressBar.delaySetVisibility(state.isProcessInitialize)
-                                initialErrorLabel.isVisible = state.isInitializedError
-                                initialErrorLabel.text = state.errorMessage
-                                myOKAction.isEnabled = state.isAvailableSendBarcode
+                            devicesComboBox.isVisible = isSuccessInitializedComponent
+                            textAreaContainer.isVisible = isSuccessInitializedComponent
+                            progressBar.delaySetVisibility(state.isProcessInitialize)
+                            initialErrorLabel.isVisible = state.isInitializedError
+                            initialErrorLabel.text = state.errorMessage
+                            myOKAction.isEnabled = state.isAvailableSendBarcode
 
-                                val border = when (isSuccessInitializedComponent) {
-                                    true -> titleBorder
-                                    false -> emptyBorder
+                            val border = when (isSuccessInitializedComponent) {
+                                true -> titleBorder
+                                false -> emptyBorder
+                            }
+
+                            if (dialogPanel.border !== border) {
+                                dialogPanel.border = border
+                            }
+
+                            if (state.barcode != textArea.text) {
+                                textArea.text = state.barcode.orEmpty()
+                            }
+
+                            devicesComboBox.model = DefaultComboBoxModel(state.items.toTypedArray())
+                                .apply { selectedItem = state.selectedItem }
+                        },
+                        logger::error
+                    )
+                    .let(viewDisposables::add)
+
+                component.events
+                    .subscribe(
+                        { event ->
+                            when (event) {
+                                Event.CloseDialog -> close(OK_EXIT_CODE)
+                                Event.ShowMultipleChoice -> multipleChoiceDialogFactory.create().show()
+                                Event.ShowMultipleGenerateBarcodeDialog -> MultipleGeneratorDialog(this).show()
+                                is Event.ShowErrorSendCode -> {
+                                    NotificationGroupManager.getInstance()
+                                        .getNotificationGroup("Barcode Sender Notification Group")
+                                        .createNotification(
+                                            "Error sending codes",
+                                            event.throwable::class.java.name,
+                                            NotificationType.ERROR
+                                        )
+                                        .notify(project)
                                 }
 
-                                if (dialogPanel.border !== border) {
-                                    dialogPanel.border = border
+                                is Event.ShowBarcodeTypeList -> {
+                                    BarcodePopupMenu(event.list) { event ->
+                                        event.actionCommand?.let(
+                                            choiceGenerateBarcodeItem::onNext
+                                        )
+                                    }.show(textArea, event.point.x, event.point.y)
                                 }
+                            }
+                        },
+                        logger::error
+                    )
 
-                                if (state.barcode != textArea.text) {
-                                    textArea.text = state.barcode.orEmpty()
-                                }
-
-                                devicesComboBox.model = DefaultComboBoxModel(state.items.toTypedArray())
-                                    .apply { selectedItem = state.selectedItem }
-                            },
-                            logger::error
-                        )
-                        .let(viewDisposables::add)
-
-                    component.events
-                        .subscribe(
-                            { event ->
-                                when (event) {
-                                    Event.CloseDialog -> close(OK_EXIT_CODE)
-                                    Event.ShowMultipleChoice -> multipleChoiceDialogFactory.create().show()
-                                    Event.ShowMultipleGenerateBarcodeDialog -> MultipleGeneratorDialog(this).show()
-                                    is Event.ShowErrorSendCode -> {
-                                        NotificationGroupManager.getInstance()
-                                            .getNotificationGroup("Barcode Sender Notification Group")
-                                            .createNotification(
-                                                "Error sending codes",
-                                                event.throwable::class.java.name,
-                                                NotificationType.ERROR
-                                            )
-                                            .notify(project)
-                                    }
-                                    is Event.ShowBarcodeTypeList -> {
-                                        BarcodePopupMenu(event.list) { event ->
-                                            event.actionCommand?.let(
-                                                choiceGenerateBarcodeItem::onNext
-                                            )
-                                        }.show(textArea, event.point.x, event.point.y)
-                                    }
-                                }
-                            },
-                            logger::error
-                        )
-
-                    component.bindView(this)
-                },
+                component.bindView(this)
+            },
                 terminationAction = {
                     viewDisposables.clear()
                     component.unbindView()

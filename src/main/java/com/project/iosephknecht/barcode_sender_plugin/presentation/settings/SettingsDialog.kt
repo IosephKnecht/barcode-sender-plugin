@@ -43,27 +43,26 @@ internal class SettingsDialog : Configurable, SettingsComponent.View {
         Disposer.register(Application.applicationDiComponent.application, disposable)
 
         disposable.defineNestedLifetime()
-            .bracket(
-                opening = {
-                    DaggerSettingsDiComponent.factory()
-                        .create(Application.applicationDiComponent)
-                        .inject(this)
+            .bracketIfAlive(opening = {
+                DaggerSettingsDiComponent.factory()
+                    .create(Application.applicationDiComponent)
+                    .inject(this)
 
-                    settingsComponent.states
-                        .subscribe(
-                            { state ->
-                                barcodeReceiverKeyTextField?.run {
-                                    if (text != state.barcodeReceiveKey) {
-                                        text = state.barcodeReceiveKey
-                                    }
+                settingsComponent.states
+                    .subscribe(
+                        { state ->
+                            barcodeReceiverKeyTextField?.run {
+                                if (text != state.barcodeReceiveKey) {
+                                    text = state.barcodeReceiveKey
                                 }
-                            },
-                            logger::error
-                        )
-                        .let(disposables::add)
+                            }
+                        },
+                        logger::error
+                    )
+                    .let(disposables::add)
 
-                    settingsComponent.bindView(this)
-                },
+                settingsComponent.bindView(this)
+            },
                 terminationAction = {
                     settingsComponent.unbindView()
                     settingsComponent.release()

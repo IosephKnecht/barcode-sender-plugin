@@ -105,55 +105,55 @@ internal class MultipleGeneratorDialog(
         val componentDisposable = CompositeDisposable()
 
         disposable.defineNestedLifetime()
-            .bracket(
-                opening = {
-                    component.events
-                        .subscribe(
-                            { event ->
-                                when (event) {
-                                    is MultipleBarcodeGeneratorComponent.Event.ApproveBarcodeList -> {
-                                        event.barcodeList.let { (type, list) ->
-                                            listener.approve(
-                                                barcodeType = type,
-                                                list = list
-                                            )
+            .bracketIfAlive(opening = {
+                component.events
+                    .subscribe(
+                        { event ->
+                            when (event) {
+                                is MultipleBarcodeGeneratorComponent.Event.ApproveBarcodeList -> {
+                                    event.barcodeList.let { (type, list) ->
+                                        listener.approve(
+                                            barcodeType = type,
+                                            list = list
+                                        )
 
-                                            super.doCancelAction()
-                                        }
-                                    }
-                                    MultipleBarcodeGeneratorComponent.Event.CancelBarcodeList -> {
-                                        listener.cancel()
                                         super.doCancelAction()
                                     }
                                 }
-                            },
-                            logger::error
-                        )
-                        .let(componentDisposable::add)
 
-                    component.state
-                        .subscribe(
-                            { state ->
-                                barcodeTypeComboBox.selectedItem = state.barcodeType
-                                barcodeCountSpinner.model.value = state.barcodeCount
-                                okAction.isEnabled = !state.isProcessGenerate
-                                barcodeGenerateProgressBar.delaySetVisibility(state.isProcessGenerate)
+                                MultipleBarcodeGeneratorComponent.Event.CancelBarcodeList -> {
+                                    listener.cancel()
+                                    super.doCancelAction()
+                                }
+                            }
+                        },
+                        logger::error
+                    )
+                    .let(componentDisposable::add)
 
-                                setCancelButtonText(
-                                    when (state.isProcessGenerate) {
-                                        true -> "Cancel"
-                                        false -> "OK"
-                                    }
-                                )
+                component.state
+                    .subscribe(
+                        { state ->
+                            barcodeTypeComboBox.selectedItem = state.barcodeType
+                            barcodeCountSpinner.model.value = state.barcodeCount
+                            okAction.isEnabled = !state.isProcessGenerate
+                            barcodeGenerateProgressBar.delaySetVisibility(state.isProcessGenerate)
 
-                                with(barcodeTextArea) { if (text != state.barcodeText) text = state.barcodeText }
-                            },
-                            logger::error
-                        )
-                        .let(componentDisposable::add)
+                            setCancelButtonText(
+                                when (state.isProcessGenerate) {
+                                    true -> "Cancel"
+                                    false -> "OK"
+                                }
+                            )
 
-                    component.bindView(this)
-                },
+                            with(barcodeTextArea) { if (text != state.barcodeText) text = state.barcodeText }
+                        },
+                        logger::error
+                    )
+                    .let(componentDisposable::add)
+
+                component.bindView(this)
+            },
                 terminationAction = {
                     componentDisposable.clear()
                     component.unbindView()

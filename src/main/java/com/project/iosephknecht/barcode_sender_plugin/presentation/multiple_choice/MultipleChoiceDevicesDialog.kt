@@ -93,37 +93,37 @@ internal class MultipleChoiceDevicesDialog(
         this.title = StringProvider.PlainString.PLUGIN_NAME.value
 
         disposable.defineNestedLifetime()
-            .bracket(
-                opening = {
-                    component.states
-                        .subscribe(
-                            { state ->
-                                okAction.isEnabled = state.selectedDeviceCount > 1
-                                devicesList.model = MultipleChoiceListModel(state.deviceList)
-                            },
-                            logger::error
-                        )
-                        .let(componentDisposable::set)
+            .bracketIfAlive(opening = {
+                component.states
+                    .subscribe(
+                        { state ->
+                            okAction.isEnabled = state.selectedDeviceCount > 1
+                            devicesList.model = MultipleChoiceListModel(state.deviceList)
+                        },
+                        logger::error
+                    )
+                    .let(componentDisposable::set)
 
-                    component.events
-                        .subscribe(
-                            { event ->
-                                when (event) {
-                                    MultipleChoiceComponent.Event.InterruptChoice -> {
-                                        listener.interruptChoice()
-                                        super.doCancelAction()
-                                    }
-                                    is MultipleChoiceComponent.Event.SuccessChoice -> {
-                                        listener.successChoice(event.devices)
-                                        super.doOKAction()
-                                    }
-                                }.let { }
-                            },
-                            logger::error
-                        )
+                component.events
+                    .subscribe(
+                        { event ->
+                            when (event) {
+                                MultipleChoiceComponent.Event.InterruptChoice -> {
+                                    listener.interruptChoice()
+                                    super.doCancelAction()
+                                }
 
-                    component.bindView(this)
-                },
+                                is MultipleChoiceComponent.Event.SuccessChoice -> {
+                                    listener.successChoice(event.devices)
+                                    super.doOKAction()
+                                }
+                            }.let { }
+                        },
+                        logger::error
+                    )
+
+                component.bindView(this)
+            },
                 terminationAction = {
                     component.unbindView()
                     componentDisposable.dispose()
